@@ -4,6 +4,9 @@ import org.andengine.extension.svg.adt.SVG;
 import org.andengine.opengl.texture.atlas.bitmap.source.PictureBitmapTextureAtlasSource;
 import org.andengine.util.debug.Debug;
 
+import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
+
 
 /**
  * (c) 2010 Nicolas Gramlich 
@@ -62,6 +65,12 @@ public class SVGBaseBitmapTextureAtlasSource extends PictureBitmapTextureAtlasSo
 	// ===========================================================
 	// Methods for/from SuperClass/Interfaces
 	// ===========================================================
+
+	@Override
+	public Bitmap onLoadBitmap(Config pBitmapConfig, boolean pMutable) {
+		// FIXME: deal with mutable flag
+		return super.onLoadBitmap(pBitmapConfig);
+	}
 
 	// ===========================================================
 	// Methods
