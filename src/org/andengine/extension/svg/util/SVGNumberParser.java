@@ -39,7 +39,7 @@ public class SVGNumberParser {
 			return null;
 		}
 
-		final String[] parts = pString.split("[\\s,]+");
+		final String[] parts = pString.replaceFirst("^[\\s]+", "").split("[\\s,]+");
 		final float[] numbers = new float[parts.length];
 		for(int i = parts.length - 1; i >= 0; i--) {
 			numbers[i] = Float.parseFloat(parts[i]);
